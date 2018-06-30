@@ -1,0 +1,84 @@
+\documentclass[a5paper, 10.5pt, titlepage, twopage]{book}
+\usepackage[utf8]{inputenc}   % Accept european-encoded (latin1) characters.
+\usepackage[a5paper, inner = 0.625in, outer = 0.75in, bindingoffset = 0.125in]{geometry}
+\usepackage{bookman}
+\usepackage{latexsym}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{titling}
+\usepackage{todonotes}
+\usepackage{hyperref}
+\usepackage{sidecap}
+\usepackage{xcolor}
+\newcommand{\Kim}{\textcolor{orange}{Kim}}
+\newcommand{\Rufus}{\textcolor{purple}{Rufus}}
+\newcommand{\Xing}{\textcolor{blue}{Xing}}
+\newcommand{\TODO}[1]{\todo[inline]{#1}}
+
+\font\domino=domino
+\def\die#1{{\domino#1}}
+\def\rdie#1{\textcolor{red}{\die#1}}
+
+\graphicspath{{./images/}}
+
+\input{cc_beamer}
+
+\renewcommand{\thechapter}{\Roman{chapter}}
+\setlength{\textheight}{422.501867pt}
+\setlength{\voffset}{10.5pt}
+
+\newcommand{\mychapter}[1]{
+    \chapter*{#1}
+    \stepcounter{chapter}
+    \addcontentsline{toc}{chapter}{#1}
+    \chaptermark{#1}
+    \label{#1}
+}
+
+
+\author{Andreas Skyman}
+\title{
+    It never rains, but it pours \\
+    \bigskip
+    \Large{
+        A game for \\
+        \medskip
+        \emph{The Pen \& Paper Game Jam} \\
+        \medskip
+        June 2018
+    }
+}
+
+\begin{document}
+
+    % Title page:
+    \input{titlepage}
+    \pagenumbering{roman}
+
+    % CC-information etc.
+    \input{ccpage}
+
+    % Table of contents:
+    \thispagestyle{empty}
+
+    \tableofcontents
+
+    \newpage
+    \thispagestyle{empty}
+
+    % Contents:
+
+    \pagenumbering{arabic}
+
+    \input{rules}
+
+    \input{copyright}
+
+    \input{board}
+
+    % \listoftodos
+    % \TODO{Remove list of todos}
+
+\end{document}
+
